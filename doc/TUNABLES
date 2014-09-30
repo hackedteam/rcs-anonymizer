@@ -1,0 +1,7 @@
+
+ - Tunable files in etc/:
+
+version       Program version (yyyymmddss)
+proxyport     Bind port for proxy connections (default 80)
+nexthop       Next hop in chain (host:port), or dash (-) to disable the proxy
+cookie        Cookie file for authentication in ASCII format (required)
