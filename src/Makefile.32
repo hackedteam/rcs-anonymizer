@@ -2,11 +2,11 @@ PROGRAM=bbproxy
 LIBDIR=lib
 CFLAGS=-m32
 CFLAGS+=-Wall -std=c99 -pedantic
-CFLAGS+=`pkg-config --cflags json`
+CFLAGS+=-I./json/json-c-0.10.i686/
 CFLAGS+=`pkg-config --cflags libcrypto`
 CFLAGS+=`pkg-config --cflags zlib`
 LDLIBS=-ldl
-LDLIBS+=json/$(LIBDIR)/libjson.a
+LDLIBS+=./json/json-c-0.10.i686/.libs/libjson.a
 LDLIBS+=/usr/$(LIBDIR)/libcrypto.a
 LDLIBS+=/usr/$(LIBDIR)/libz.a
 
