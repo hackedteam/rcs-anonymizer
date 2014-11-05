@@ -95,7 +95,7 @@ int main(int argc, char *argv[])
    if(conf.nexthop) logme(LOGMSG_STATUSOK, "Running");
 
    signal(SIGHUP, sighandler);
-   signal(SIGCHLD, sighandler);
+   signal(SIGCHLD, SIG_IGN);
 
    logme(LOGMSG_INFO, "Daemon started");
 
@@ -299,8 +299,6 @@ void sighandler(int s)
 
       if(conf.nexthop) logme(LOGMSG_STATUSOK, "Running");
       else logme(LOGMSG_STATUSERROR, "Link not configured, proxy disabled");
-   } else if(s == SIGCHLD) {
-      wait(NULL);
    }
 
    signal(s, sighandler);
